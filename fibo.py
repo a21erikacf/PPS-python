@@ -4,8 +4,15 @@ import unittest
 
 # Función fibonacci
 
-def fibonacci():
-    num = 1
-    print(num)
+def fibonacci(veces):
+    x = 0
+    num1 = 0
+    num2 = 1
+    while (x <= veces):
+        x = x + 1 
+        num1 = num2
+        num2 = num1 + num2
+        print(x)
 
-fibonacci()
+
+fibonacci(10)
