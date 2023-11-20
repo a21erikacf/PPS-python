@@ -5,14 +5,19 @@ import unittest
 # Función fibonacci
 
 def fibonacci(veces):
-    x = 0
+
+    contador = 0
     num1 = 0
     num2 = 1
-    while (x <= veces):
-        x = x + 1 
-        num1 = num2
-        num2 = num1 + num2
-        print(x)
+    
+    while (contador <= veces):
 
+        numresultado = num1
+        num1 = num2
+        num2 = num1 + numresultado
+        
+        contador += 1
+
+        print(num1)
 
 fibonacci(10)
