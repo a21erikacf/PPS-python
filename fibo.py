@@ -38,8 +38,6 @@ def fibonacci_posicion(numpos):
         for _ in range(numpos - 2):
             num1, num2 = num2, num1 + num2
         return num2
-    
-#print("La posición {posicion} de la sucesión de Fibonacci es: {valor_posicion}")
 
 # Función comprobación con Unitest
 class TestFibonacci(unittest.TestCase):
@@ -48,12 +46,16 @@ class TestFibonacci(unittest.TestCase):
     def test_quinta_posicion(self):
         # Preguntamos la posición que se quiere comprobar
         posicion = int(input("Indica el número de la posición de la sucesión de Fibonacci que deseas comprobar: "))
-        # Realizamos la secuencia Fibonacci con la posición a calcular
-        secuencia = fibonacci(posicion)
-        # Y calculamos el valor correspondiente a la posición con la función
-        valor_posicion = fibonacci_posicion(posicion)
-        # Verificamos si la quinta posición de la secuencia de Fibonacci es 3
-        self.assertEqual(secuencia[-1], valor_posicion)
+        
+        try:
+            # Realizamos la secuencia Fibonacci con la posición a calcular
+            secuencia = fibonacci(posicion)
+            # Y calculamos el valor correspondiente a la posición con la función
+            valor_posicion = fibonacci_posicion(posicion)
+            # Verificamos si la quinta posición de la secuencia de Fibonacci es 3
+            self.assertEqual(secuencia[-1], valor_posicion)
+        except ValueError as x:
+            self.assertEqual(str(x), "Se debe indicar un número igual o mayor a 0.")
 
 def comprobacion(prueba):
     # Respuesta a pregunta de comprobación
